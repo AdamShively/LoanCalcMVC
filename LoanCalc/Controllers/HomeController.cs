@@ -1,6 +1,7 @@
 ﻿using LoanCalc.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using LoanCalc.Helpers;
 
 namespace LoanCalc.Controllers
 {
@@ -38,9 +39,11 @@ namespace LoanCalc.Controllers
         public IActionResult LoanCalc(Loan loan)
         {
             //Calculate loan.
+            var loanCalc = new LoanCalculation();
 
+            Loan l = loanCalc.GetPayments(loan);
 
-            return View(loan);
+            return View(l);
         }
 
         public IActionResult Privacy()
