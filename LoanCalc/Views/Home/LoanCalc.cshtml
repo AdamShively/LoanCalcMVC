@@ -13,15 +13,15 @@
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label asp-for="Amount">Loan Amount:</label>
-                        <input type="number" class="form-control" id="loanAmount" min="1000" step="500" max="100000000000" value=@Model.Amount asp-for="Amount" />
+                        <input type="number" class="form-control" onclick="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)" onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)" id="loanAmount" step="0.25" min="1000.00" max="100000000000.00" value=@Model.Amount asp-for="Amount" />
                     </div>
                     <div class="form-group col-12">
                         <label asp-for="Term">Term:</label>
-                        <input type="number" class="form-control" id="loanTerm" min="1" value=@Model.Term asp-for="Term" />
+                        <input type="number" class="form-control" onclick="(function(el){el.value=parseFloat(el.value).toFixed(0);})(this)" onchange="(function(el){el.value=parseFloat(el.value).toFixed(0);})(this)" id="loanTerm" min="1" value=@Model.Term asp-for="Term" />
                     </div>
                     <div class="form-group col-12">
                         <label asp-for="Rate">Rate:</label>
-                        <input type="number" class="form-control" id="loanRate" min="1" step="0.1" value=@Model.Rate asp-for="Rate" />
+                        <input type="number" class="form-control" onclick="(function(el){el.value=parseFloat(el.value).toFixed(1);})(this)" onchange="(function(el){el.value=parseFloat(el.value).toFixed(1);})(this)" id="loanRate" min="1" step="0.1" value=@Model.Rate asp-for="Rate" />
                     </div>
                 </div>
                 <div class="col-12 d-flex justify-content-start mt-3">
@@ -92,4 +92,10 @@
             </div>
         </div>
     }
+    <script>
+        //Limit number input decimal places to two.
+        $(':input[type="number"]').change(function() {
+            this.value = parseFloat(this.value).toFixed(2);
+        });
+    </script>
 </div>
