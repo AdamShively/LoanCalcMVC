@@ -52,6 +52,15 @@ button.accept-policy {
     line-height: inherit;
 }
 
+.img-logo {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .img-logo {
+        display:block;
+    }
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */
