@@ -4,46 +4,103 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Loan Calc</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/LoanCalc.styles.css" asp-append-version="true" />
+   @* <link rel="stylesheet" href="~/LoanCalc.styles.css" asp-append-version="true" />*@
+
+    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js" crossorigin="anonymous"></script>
+
 </head>
-<body>
+<body class="">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-gradient-primary-to-secondary border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LoanCalc</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <img src="~/img/small_logo.png" class="d-inline-block align-text-center px-2"
+                         style="height:55px;" alt="Adam's logo">
+                </a>
+                <button class="navbar-toggler bg-danger" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LoanCalc">The App</a>
+                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="LoanCalc">The App</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" target="_blank" href="https://adamshively.netlify.app/">My Website</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" href="https://github.com/AdamShively/LoanCalcMVC">Git Repo</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container ">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - LoanCalc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+   @* <footer class="footer mt-auto sticky-footer bg-dark">
+        <div class="container-fluid">
+            <div class="row row-cols-1 row-cols-lg-3 py-2">
+                <div class="col text-light d-flex align-items-center order-last order-lg-first">
+                    <div><span class="text-muted">&copy;2022</span> Adam Shively | adammshively89@gmail.com</div>
+                </div>
+                <div class="col d-flex align-items-center justify-content-start justify-content-lg-center py-2">
+                    <img src="img/biglogo.svg" alt="Adam's logo" height="24">
+                </div>
+                <div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
+                    <div class="row ps-1">
+                        <div class="col social">
+                            <a href="https://www.linkedin.com/in/adam-shively-42162a239/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                        </div>
+                        <div class="col social">
+                            <a href="https://github.com/AdamShively" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                        </div>
+                        <div class="col social">
+                            <a href="https://www.youtube.com/channel/UCoyDVmowhwAFrvyqU6p4w3w" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>*@
+    <footer class="border-top footer bg-gradient-primary-to-secondary">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-md-6 copy-right d-flex justify-content-center py-2 fw-bold">Copyright &copy; Adam Shively</div>
+                <div class="col-md-6 icon-list-social d-flex align-items-center justify-content-center pt-md-4 pb-2">
+                    <a class="icon-list-social-link" href="https://www.linkedin.com/in/adam-shively-42162a239/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a class="icon-list-social-link" href="https://github.com/AdamShively/" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                    <a class="icon-list-social-link" href="https://www.youtube.com/channel/UCoyDVmowhwAFrvyqU6p4w3w" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
+    @*<footer class="footer py-5 mt-auto bg-gradient-primary-to-secondary">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-md-4 copy-right d-flex justify-content-center py-2">Copyright &copy; Adam Shively</div>
+                <div class="col-md-4 icon-list-social d-flex align-items-center justify-content-center py-2">
+                    <a class="icon-list-social-link text-light" href="https://www.linkedin.com/in/adam-shively-42162a239/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a class="icon-list-social-link text-light" href="https://github.com/AdamShively/" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                    <a class="icon-list-social-link text-light" href="https://www.youtube.com/channel/UCoyDVmowhwAFrvyqU6p4w3w" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+                </div>
+                <div class="col-md-4 text-md-end small d-flex justify-content-center">
+                    <a href="https://www.adamshively.net" target="_blank"><img src="~/img/blue_big.svg" alt="Adam's logo" height="24"></a>
+                </div>
+            </div>
+        </div>
+    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

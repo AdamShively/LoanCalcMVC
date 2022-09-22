@@ -2,15 +2,12 @@
     ViewData["Title"] = "Home Page";
 }
 
-  <h3 class="page-header">
-    <p>Loan Calc is an amortization loan payment calculator</p>
-    <p>that estimates loan repayment and other information.</p>
-  </h3>
-  <div align="center">
-    <form action="#" method = "post">
-      <img href="~/img/big_logo.png">
-      <p class="button">
-          <a href="/calc" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Go To Loan Calc!</a>
-      </p>
-    </form>
-  </div>  
+<h3 class="page-header text-center pt-2">
+    <span>Loan Calc is an amortization loan payment calculator</span>
+    <span>that estimates loan repayment and other information.</span>
+</h3>
+<div align="center">
+     <a class="btn btn-danger btn-lg my-5" asp-area="" asp-controller="Home" asp-action="LoanCalc">Go To Loan Calc!</a>
+     <br />
+    <img src="~/img/big_logo.png" class="mb-5">
+</div>
