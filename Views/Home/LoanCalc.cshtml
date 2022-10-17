@@ -11,16 +11,16 @@
             <form asp-controller="Home" asp-action="LoanCalc" method="post">
                 <div class="form-row fw-bold">
                     <div class="form-group col-12">
-                        <label asp-for="Amount">Loan Amount:</label>
-                        <input type="number" class="form-control bg-gray" id="loanAmount" min="1000" max="100000000000" value=1000 asp-for="Amount" />
+                        <label asp-for="Amount">Loan Amount ($):</label>
+                        <input type="number" class="form-control bg-gray" id="loanAmount" min="1000" max="100000000000" value=@Model.Amount asp-for="Amount" />
                     </div>
                     <div class="form-group col-12">
-                        <label asp-for="Term">Term:</label>
+                        <label asp-for="Term">Term (months):</label>
                         <input type="number" class="form-control bg-gray" id="loanTerm" min="1" value=@Model.Term asp-for="Term" />
                     </div>
                     <div class="form-group col-12">
-                        <label asp-for="Rate">Rate:</label>
-                        <input type="number" class="form-control bg-gray" id="loanRate" min="1" step="0.1" value=1 asp-for="Rate" />
+                        <label asp-for="Rate">Rate (%):</label>
+                        <input type="number" class="form-control bg-gray" id="loanRate" min="1" step="0.1" value=@Model.Rate asp-for="Rate" />
                     </div>
                 </div>
                 <div class="col-12 d-flex justify-content-start mt-3">
@@ -47,7 +47,7 @@
                     <label class="text-left">Total Interest</label>
                 </div>
                 <div class="col-6 text-right" id="totalInterest">
-                    @Model.TotalInterest.ToString("0.00")%
+                    $@Model.TotalInterest.ToString("0.00")
                 </div>
                 <div class="col-6">
                     <label class="text-left">Total Cost</label>
@@ -80,8 +80,8 @@
                                 <td>@item.Month</td>
                                 <td>$@item.PaymentAmount.ToString("0.00")</td>
                                 <td>$@item.MonthlyPrincipal.ToString("0.00")</td>
-                                <td>@item.MonthlyInterest.ToString("0.00")%</td>
-                                <td>@item.TotalInterest.ToString("0.00")%</td>
+                                <td>$@item.MonthlyInterest.ToString("0.00")</td>
+                                <td>$@item.TotalInterest.ToString("0.00")</td>
                                 <td>$@item.Balance.ToString("0.00")</td>
                             </tr>
                         }

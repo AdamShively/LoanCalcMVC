@@ -29,7 +29,7 @@ namespace LoanCalc.Controllers
             loan.TotalCost = 0.0m;
             loan.Rate = 0.0m;
             loan.Amount = 0.0m;
-            loan.Term = 60;
+            loan.Term = 0;
 
             return View(loan);
         }
